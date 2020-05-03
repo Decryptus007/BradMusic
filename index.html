@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #444;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #container {
+            height: 300px;
+            text-align: center;
+        }
+
+        #broom {
+            animation-name: fly;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        #gratitude {
+            animation-name: linear;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            font-size: 35px;
+            font-weight: 900;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            10% {
+                transform: translateX(50px) translateY(20px);
+            }
+            20% {
+                transform: translateX(0px) translateY(40px);
+            }
+            30% {
+                transform: translateX(50px) translateY(60px);
+            }
+            40% {
+                transform: translateX(0px) translateY(80px);
+            }
+            60% {
+                transform: translateX(-50px) translateY(60px);
+            }
+            70% {
+                transform: translateX(0px) translateY(40px);
+            }
+            80% {
+                transform: translateX(-50px) translateY(20px);
+            }
+            100% {
+                transform: translateX(0px) translateY(0px);
+            }
+        }
+        @keyframes linear {
+            0% {
+                transform: translateX(0px);
+            }
+            10% {
+                transform: translateX(20px);
+            }
+            50% {
+                transform: translateX(60px);
+            }
+            80% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0px);
+            }
+        }
+    </style>
+    <title>CSS Animations</title>
+</head>
+<body>
+    <div id="container">
+        <img id="broom" src="https://user-images.githubusercontent.com/63644529/80912439-c750d280-8d34-11ea-912b-3f2e8f51ea78.png">
+    </div>
+
+    <div id="gratitude">
+        <span><p>Thanks for paying a visit to this domain.
+            <br>   A new project will be added shortly.
+            <br>
+        <em><p style="text-align: center;">DomNick</p></em></p></span>
+    </div>
+</body>
+
+</html>
