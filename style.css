@@ -218,6 +218,40 @@
     margin-left: 50px;
     font-size:300%;
  }
+
+ footer {
+    width: 100%;
+    display: inline-block;
+    background: #00000081;
+    color: gold;
+    padding: 30px;
+    margin-top: 80px;
+ }
+ .nameon {
+    color: aqua;
+ }
+ .co{
+    text-align: right;
+ }
+ .co,
+ .fawaz {
+    width: 49%;
+    display: inline-block;
+ }
+ .authors img {
+    width: 50px;
+    border-radius: 50%;
+ }
+ .authors .icons {
+    color: goldenrod;
+    padding: 10px;
+    border: 2px dashed #B29A2B;
+    width: 512px;
+    height: 512px;
+    margin: 20px;
+ }
+ .authors .icons:hover {
+    background: aquamarine;
  
  @keyframes fade{
     from {
