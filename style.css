@@ -228,7 +228,7 @@
     margin-top: 80px;
  }
  .nameon {
-    color: aqua;
+    color: #12664a;
  }
  .co{
     text-align: right;
@@ -273,3 +273,4 @@
        transform:scale(0);
     }
  }
+}
