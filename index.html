@@ -1,426 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
-    background: rgb(180, 212, 248);
-}
+   <head>
+      <meta charset="utf-8">
+      <meta content="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+      <title>what's the time in africa</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+      <script>
+         function startTime() {
+           var today = new Date();
+           var h = today.getHours();
+           var m = today.getMinutes();
+           var s = today.getSeconds();
+           m = checkTime(m);
+           s = checkTime(s);
+           document.getElementById('txt').innerHTML =
+           h + ":" + m + ":" + s;
+           var t = setTimeout(startTime, 500);
+         }
+         function checkTime(i) {
+           if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+           return i;
+         }
+         </script>
+   </head>
+   <body onload="startTime()">
 
-/* Main Styles */
-
-/* HEADER */
-header{
-    background: #222;
-    color: #fff;
-    padding: 20px 30px;
-}
-
-/* logo nest inside header */
-header #page-header {
-    color: beige;
-    width: 49%;
-    text-decoration: none;
-    display: inline-block;
-}
-
-header img {
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-header h2 {
-    font-size: 16px;
-}
-
-/* Main Navigation*/
-#main-navigation {
-    width: 49%;
-    display: inline-block;
-    text-align: right;
-}
-
-#main-navigation ul {
-    list-style: none;
-    padding: 0;
-}
-
-#main-navigation ul li {
-    display: inline-block;
-}
-
-#main-navigation ul li a {
-    color: beige;
-    text-decoration: none;
-    padding: 10px 15px;
-}
-
-#main-navigation ul li a:hover {
-    background: #444;
-    border-radius: 3px;
-    transition: 0.3s ease-in-out;
-}
-
-/* footer */
-footer {
-    background: #222;
-    color: #777;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-}
-
-footer img {
-    display: block;
-    border-radius: 5px;
-    width: 80px;
-    margin: 0 auto 10px;
-}
-
-.hero {
-    min-height: 800px;
-    text-align: center;
-    background: #555; 
-    background-image: url('https://raw.githubusercontent.com/Decryptus007/My-Projects/master/rotor.jpg'); 
-    background-size: cover;
-}
-
-.hero-content {
-    color: beige;
-    padding-top: 130px;
-    line-height: 1;
-}
-
-.hero-title {
-    margin: 0;
-    font-size: 70px;
-}
-
-.hero-content p {
-    font-size: 30px;
-    margin-bottom: 60px;
-}
-
-/* Site Section Styles */
-.site-section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.site-section-inside {
-    width: 90%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-header h2 {
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: rgb(109, 107, 107);
-}
-
-.site-section-secondary {
-    background: #EFEFEF;
-}
-
-/* Feature Boxes */
-.service-box {
-    background: rgb(71, 122, 180);
-    display: inline-block;
-    width: 28%;
-    padding: 20px 30px;
-    line-height: 1.5;
-    border-radius: 5px;
-}
-
-.service-box img {
-    width: 80px;
-    margin-bottom: 15px;
-}
-
-.service-box h5 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 20px;
-    color: rgb(202, 200, 200);
-    text-transform: uppercase;
-    font-weight: 300px;
-    letter-spacing: 2px; 
-}
-
-/* About */
-.about {
-    padding: 10px;
-}
-
-/* Testimonial style */
-.testimonial-box {
-    display: inline-block;
-    width: 27%;    
-    padding: 20px 30px;
-    border-radius: 5px;
-}
-
-.testimonial-content {
-    background: rgb(71, 122, 180);
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.testimonial-author img {
-    float: left;
-    width: 80px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.testimonial-author h5 {
-    font-size: 18px;
-    margin: 0;
-    padding-top: 15px;
-}
-
-.testimonial-author span {
-    font-size: 14px;
-    color: rgb(97, 95, 95);
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(138, 211, 240);
-}
-
-a:hover {
-    background-color: #222;
-    color: aliceblue;
-    border-radius: 5px;
-}
-
-span {
-    margin: auto;
-    text-align: center;
-}
-
-span a {
-    
-    color: #222;
-    padding: 10px;
-    border: 2px dashed rgb(71, 122, 180);
-    border-radius: 20px;
-    display: inline-block;
-}
-
-/* Mobile Responsive */
-@media screen and (max-width: 768px) {
-    /* Header */
-    header #page-header {
-        width: 100%;
-        display: block;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    header #main-navigation {
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-
-    /* Hero */
-    .hero {
-        min-height: 300px;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    .hero-content {
-        padding-top: 80px;
-    }
-    .hero-title {
-        font-size: 30px;
-    }
-    .hero-content p {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-
-    /* Feature Boxes */
-    .service-box,
-    .testimonial-box {
-        box-sizing: border-box;
-        width: 100%;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-}
-    </style>
-	<title>Document</title>
-</head>
-<body>	
-	<!-- HEADER -->
-    <header id="home">
-		<!-- lOGO -->
-		<h2 id="page-header">
-			<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/profile.jpg">
-			Decryptus || <a href="https://sunbiz.com.ng/affiliate/decryptus" target="_blank">
-				Register on Sunbiz</a>
-		</h2>
-		<!-- NAVIGATION -->
-		<nav id="main-navigation">
-			<ul>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#testimonies">Testimonies</a></li>
-			</ul>
-	    </nav>
-    </header>
-
-	<!-- MAIN -->
-    <div id="page-main">
-		<!-- HERO -->
-
-		<div class="hero">
-			<div class="hero-content">
-				<h1 class="hero-title">
-					Registration on Sunbiz is still ongoing
-				</h1>
-				<p>
-					Do you know that with just 500N you could earning more in less than a week, ask me how by clicking on this link 
-					<a href="https://t.me/Dominic080" target="_blank">Message me on Telegram</a>
-					or you could take a leap of faith and register directly with my affiliate link
-					<a href="https://sunbiz.com.ng/affiliate/decryptus" target="_blank">here</a>
-				</p>
-			</div>
-		</div>
-		<!-- SERVICES -->
-
-		<div id="services" class="site-section">
-
-			<div class="section-header">
-				<h2>Key Services</h2>
-			</div>
-
-			<div class="site-section-inside">
-				<div class="service-box">
-					<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/code.png">
-					<h5>JavaScript</h5>
-					<p>This is my modern customized website so feel free to rate me.
-						All ratings are not recorded though. 
-						...And since you are here you can click on this 
-						<b><a href="https://sunbiz.com.ng/affiliate/decryptus" target="_blank">
-							link</a></b> 
-						to register for SunBiz. it's 100&#37; legit.</p>
-				</div>
-
-				<div class="service-box">
-					<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/teaching.png">
-					<h5>Instructor</h5>
-					<p>This is my modern customized website so feel free to rate me.
-					All ratings are not recorded though. ...And since you are not here you can click 
-					on this 
-					<b><a href="https://sunbiz.com.ng/affiliate/decryptus" target="_blank">
-						link</a></b> 
-					to register for SunBiz. it's 100&#37; legit.</p>
-				</div>
-
-				<div class="service-box">
-					<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/socialMedia.png">
-					<h5>YouTube Channel</h5>
-					<p>This is my modern customized website so feel free to rate me.
-						All ratings are not recorded though. ...And since you are here you can click 
-						on this 
-						<b><a href="https://sunbiz.com.ng/affiliate/decryptus" target="_blank">
-							link</a></b> 
-						to register for SunBiz. it's 100&#37; legit.</p>
-				</div>
-			</div>
-			
-		</div>
-		<!-- ABOUT -->
-
-		<div id="about" class="section-header about">
-			<h2>About Me</h2>
-			<p>
-				Deadlights jack lad schooner scallywag dance the hempen jig carouser 
-				broadside cable strike colors. Bring a spring upon her cable holystone 
-				blow the man down spanker Shiver me timbers to go on account lookout 
-				wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm 
-				spyglass sheet transom heave to.
-
-				Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. 
-				Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey 
-				lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain
-				schooner gaff booty Jack Tar transom spirits.
-			</p>
-		</div>
-		<!-- TESTIMONIALS -->
-		<section id="testimonies" class="site-section testimonials-section-secondary">
-			<div class="site-section-inside">
-				<div class="section-header">
-					<h2>Testimonials</h2>
-				</div>
-
-				<div class="testimonial-box">
-					<div class="testimonial-content">
-						This is where you write the testimonies of the user in ya website
-						regarding what you made.
-					</div>
-					<div class="testimonial-author">
-						<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/avatar1.png" alt="dom">
-						<h5>Mrs. Griffin</h5>
-						<span>Title</span>
-					</div>
-				</div>
-
-				<div class="testimonial-box">
-					<div class="testimonial-content">
-						This is where you write the testimonies of the user in ya website
-						regarding what you made.
-					</div>
-					<div class="testimonial-author">
-						<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/avatar2.png" alt="dom">
-						<h5>Nerd</h5>
-						<span>Title</span>
-					</div>
-				</div>
-
-				<div class="testimonial-box">
-					<div class="testimonial-content">
-						This is where you write the testimonies of the user in ya website
-						regarding what you made.
-					</div>
-					<div class="testimonial-author">
-						<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/avatar3.png" alt="dom">
-						<h5>Maleek</h5>
-						<span>Title</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<span class="backToTop"><p><a href="#home">Back to the top</a></p></span>
-	</div>
-
-	<!-- FOOTER -->
-	<footer id="footer">
-		<img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/profile.jpg">
-		<span>My article<br />&copy;2020</span>
-	</footer>
-
-	</div>
-
-</body>
+      <div style="color: aquamarine; border: 1px solid gold; width: max-content;" id="txt"></div>
+      
+      <div class="container">
+         <span class="advert" id="gor"><i class="fas fa-sun"></i></span>
+         <span class="advert2" id="gore"><i class="far fa-moon"></i></span>
+         <div class="text">Search for a country to know the time over there</div>
+         <div class="altText">Select any country of your choice from the dropdown menu to view their current time</div>
+         <form action="#" onsubmit="yourJsFunction();return false">
+            <div class="search" id="search">
+               <table width="100%" height="100%">
+                  <tr>
+                     <td><button id="searchButton"><ion-icon name="search-outline"></ion-icon></button></td>
+                     <td width="70%" style="padding-bottom:13px;"><input id="input" class="input" type="text" placeholder="search" autocomplete="off"></td>
+                     <td width="15%"><button id="list"><ion-icon name="chevron-down-outline"></ion-icon></button></td>
+                  </tr>
+               </table>
+            </div>
+         </form>
+         <div class="text2">click on the search icon to display data</div>
+         <div class="search loader">
+            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
+            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
+            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
+         </div>
+         <div class="search data">
+            <table class="table">
+               <tr class="short">
+                  <td colspan="2" class="greet">Good evening dear, it's evening in Nigeria</td>
+               </tr>
+               <tr>
+                  <td class="image" rowspan="3"><div class="img"><img id="img" src="https://restcountries.eu/data/dza.svg" alt="flag"></div></td>
+                  <td class="small msg1"></td>
+               </tr>
+               <tr>
+                  <td class="time">9:30 pm</td>
+               </tr>
+               <tr>
+                  <td class="small msg2">Monday April 20 2020</td>
+               </tr>
+               <tr>
+                  <td class="addDetails"></td>
+               </tr>
+            </table>
+         </div>
+         
+         <div class="search adv" id="adv">
+            <ul class="country-list">
+               
+            </ul>
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
 </html>
