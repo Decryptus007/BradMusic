@@ -1,101 +1,93 @@
-
-<!DOCTYPE html>
+<!DoCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta content="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-      <title>What Says the Time?</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-      <script>
-         function startTime() {
-           var today = new Date();
-           var h = today.getHours();
-           var m = today.getMinutes();
-           var s = today.getSeconds();
-           m = checkTime(m);
-           s = checkTime(s);
-           document.getElementById('txt').innerHTML =
-           h + ":" + m + ":" + s;
-           var t = setTimeout(startTime, 500);
-         }
-         function checkTime(i) {
-           if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-           return i;
-         }
-         </script>
-   </head>
-   <body onload="startTime()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgba(128, 235, 27, 0.959);
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            box-sizing: border-box;
+        }
+        table{
+            width: auto;
+            margin: auto;
+            background-color: black;
+            background-image: url(data:image/jpeg;base64,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);
+            border-radius: 15%;
+        }
+        td {
+            border: none;
+            margin: 10px;
+        }
+        input[type='text']{
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
+            color: black;
+            background-color: aquamarine;
+        }
+        input[type='button']{
+            border: none;
+            border-bottom: 2px solid red;
+            width: 30px;
+            margin: 2px;
+            background-color: rgb(242, 255, 127);
+        }
+        span{
+            color: rgb(126, 250, 10);
+            opacity: 0.5;
+            font-size: x-small;
+        }
+        #ac{
+            background-color: rgb(9, 121, 250);
+        }
+    </style>
+    <title>Simple Calc</title>
+</head>
+<body>
+    <h2>Basic Calculator</h2>
 
-      <div style="color: #12664a; border: 1px solid gold; width: max-content;" id="txt"></div>
-      <div style="width: 512px; overflow: hidden; height: 300px; background: cover; margin: 10px auto; text-align: center;" ><img src="https://i.ytimg.com/vi/R2s8DT0sZ6U/maxresdefault.jpg" style="width: 512px;"></div>
-      <div class="container">
-         <span class="advert" id="gor"><i class="fas fa-sun"></i></span>
-         <span class="advert2" id="gore"><i class="far fa-moon"></i></span>
-         <div class="text">Search for a country to know the time over there</div>
-         <div class="altText">Select any country of your choice from the dropdown menu to view their current time</div>
-         <form action="#" onsubmit="yourJsFunction();return false">
-            <div class="search" id="search">
-               <table width="100%" height="100%">
-                  <tr>
-                     <td><button id="searchButton"><ion-icon name="search-outline"></ion-icon></button></td>
-                     <td width="70%" style="padding-bottom:13px;"><input id="input" class="input" type="text" placeholder="search" autocomplete="off"></td>
-                     <td width="15%"><button id="list"><ion-icon name="chevron-down-outline"></ion-icon></button></td>
-                  </tr>
-               </table>
-            </div>
-         </form>
-         <div class="text2">click on the search icon to display data</div>
-         <div class="search loader">
-            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
-            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
-            <div id="dot"><ion-icon name="chevron-forward-circle-outline"></ion-icon></div>
-         </div>
-         <div class="search data">
-            <table class="table">
-               <tr class="short">
-                  <td colspan="2" class="greet">Good evening dear, it's evening in Nigeria</td>
-               </tr>
-               <tr>
-                  <td class="image" rowspan="3"><div class="img"><img id="img" src="https://restcountries.eu/data/dza.svg" alt="flag"></div></td>
-                  <td class="small msg1"></td>
-               </tr>
-               <tr>
-                  <td class="time">9:30 pm</td>
-               </tr>
-               <tr>
-                  <td class="small msg2">Monday April 20 2020</td>
-               </tr>
-               <tr>
-                  <td class="addDetails"></td>
-               </tr>
-            </table>
-         </div>
-         
-         <div class="search adv" id="adv">
-            <ul class="country-list">
-               
-            </ul>
-         </div>
-      </div>
-      <script src="script.js"></script>
-      <footer>
-         <div class="authors">
-            <div class="fawaz">
-               <h2 class="name"><span class="nameon">Author:</span> Pherwerz</h2>
-               <img src="https://scontent.flos1-1.fna.fbcdn.net/v/t1.0-1/p160x160/68300822_1216877941818741_7044786907166801920_o.jpg?_nc_cat=106&_nc_sid=dbb9e7&_nc_eui2=AeE6GnY14fuNXMSdwzjsfkFqlvkZKTEJJHqW-RkpMQkkeix35tI2VD2QGYhQIhQmrtxGIs7lIFnD1MJqmzVJAY-0&_nc_ohc=WVQOW6jGL1UAX9cpnkJ&_nc_ht=scontent.flos1-1.fna&_nc_tp=6&oh=dfaeb12d56300e2f304fb9799f03e211&oe=5EE75669">
-               <span class="icons" width="512"><a href="https://web.facebook.com/messages/t/adebayo.fawaz.ajibola/"><i class="fab fa-facebook-messenger"></i></a></span>
-               <span class="icons"><a href="https://t.me/King_faweeeezy"><i class="fab fa-telegram"></i></a></span>
-            </div>
-            <div class="co">
-               <h2 class="name"><span class="nameon">Retouched by:</span> Decryptus</h2>
-               <img src="https://scontent.flos1-1.fna.fbcdn.net/v/t1.0-1/p160x160/42523627_2165262477087012_1053201658302955520_o.jpg?_nc_cat=104&_nc_sid=dbb9e7&_nc_eui2=AeGX_aDHjh0UcWJXcQRi9MuErHTlPYSm-kysdOU9hKb6TB94J8bor8yG9rdYScl0SDovMmZ2q9TjkGruPOeoN9vr&_nc_ohc=BFhrzn0V9RAAX9Ivaxz&_nc_ht=scontent.flos1-1.fna&_nc_tp=6&oh=c9a538d741c3045b1ef77f8d01974f89&oe=5EE7518C">
-               <span class="icons"><a href="https://web.facebook.com/messages/t/inioluwa.dominic"><i class="fab fa-facebook-messenger"></i></a></span>
-               <span class="icons"><a href="https://t.me/Dominic080"><i class="fab fa-telegram"></i></a></span>
-            </div>
-         </div>
-      </footer>
-   </body>
+    <form name="calc" >
+        <table border="2">
+            <tr>
+                <td colspan="4"><input type="text" name="display" id="btn" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn" value="9" onclick="calc.display.value+='9'"></td>
+                <td><input type="button" id="btn" value="8" onclick="calc.display.value+='8'"></td>
+                <td><input type="button" id="btn" value="7" onclick="calc.display.value+='7'"></td>
+                <td><input type="button" id="ac" value="AC" onclick="calc.display.value= ''"></td>             
+            </tr>
+            <tr>
+                <td><input type="button" id="btn" value="6" onclick="calc.display.value+='6'"></td>
+                <td><input type="button" id="btn" value="5" onclick="calc.display.value+='5'"></td>
+                <td><input type="button" id="btn" value="4" onclick="calc.display.value+='4'"></td>
+                <td><input type="button" id="btn" value="÷" onclick="calc.display.value+='/'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn" value="3" onclick="calc.display.value+='3'"></td>
+                <td><input type="button" id="btn" value="2" onclick="calc.display.value+='2'"></td>
+                <td><input type="button" id="btn" value="1" onclick="calc.display.value+='1'"></td>
+                <td><input type="button" id="btn" value="x" onclick="calc.display.value+='*'"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btn" value="." onclick="calc.display.value+='.'"></td>
+                <td><input type="button" id="btn" value="0" onclick="calc.display.value+='0'"></td>
+                <td><input type="button" id="btn" value="%" onclick="calc.display.value=(calc.display.value/100)"></td>
+                <td><input type="button" id="btn" value="-" onclick="calc.display.value+='-'"></td>
+            </tr>
+            <tr>
+                <td><input id="btn" type=button value="^2" onclick="calc.display.value=Math.pow(calc.display.value,2)"></td>
+                <td><input id="btn" type=button value="1/x" onclick="calc.display.value=1/calc.display.value"></td>
+                <td><input type="button" id="btn" value="=" onclick="calc.display.value=eval(calc.display.value)"></td>
+                <td><input type="button" id="btn" value="+" onclick="calc.display.value+='+'"></td>
+            </tr>
+            <tr><td colspan="4"><span>Decryptus.Tech.Inc &reg;</span></td></tr>
+        </table>
+    </form>
+    
+</body>
 </html>
