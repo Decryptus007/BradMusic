@@ -42,7 +42,11 @@
             font-size: x-small;
         }
         #ac{
+           
             background-color: rgb(9, 121, 250);
+        }
+        ::placeholder{
+            font-size: xx-small;
         }
     </style>
     <title>Simple Calc</title>
@@ -53,13 +57,15 @@
     <form name="calc" >
         <table border="2">
             <tr>
-                <td colspan="4"><input type="text" name="display" id="btn" disabled></td>
+                <td colspan="4"><input type="text" name="display" id="btn" disabled placeholder="To clear all double-tap on AC"></td>
+            </tr>
             </tr>
             <tr>
                 <td><input type="button" id="btn" value="9" onclick="calc.display.value+='9'"></td>
                 <td><input type="button" id="btn" value="8" onclick="calc.display.value+='8'"></td>
                 <td><input type="button" id="btn" value="7" onclick="calc.display.value+='7'"></td>
-                <td><input type="button" id="ac" value="AC" onclick="calc.display.value= ''"></td>             
+                <td><input type="button" id="ac" value="AC" onclick="calc.display.value=calc.display.value.substr(0, calc.display.value.length-1)" 
+                    ondblclick="calc.display.value=''"></td>             
             </tr>
             <tr>
                 <td><input type="button" id="btn" value="6" onclick="calc.display.value+='6'"></td>
