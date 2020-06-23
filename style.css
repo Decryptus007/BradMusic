@@ -17,7 +17,7 @@ html{
     left: 2%;
     transition: 4s;
     opacity: .8;
-    animation: float 9s ease-in-out;
+    animation: float 9s infinite ease-in-out;
 }
 #float2{
     position: absolute;
@@ -26,7 +26,7 @@ html{
     top: 7%;
     right: 2%;
     opacity: .8;
-    animation: float2 9s  ease-in-out;
+    animation: float2 9s infinite ease-in-out;
 }
 #float3{
     position: absolute;
@@ -34,7 +34,7 @@ html{
     width: 70px;
     bottom: 20%;
     left: 2%;
-    animation: float3 9s  ease-in-out;
+    animation: float3 9s infinite ease-in-out;
 }
 #float4{
     position: absolute;
@@ -42,7 +42,7 @@ html{
     width: 70px;
     bottom: 20%;
     right: 2%;
-    animation: float4 9s  ease-in-out;
+    animation: float4 9s infinite ease-in-out;
 }
 @keyframes float{
     0%{
