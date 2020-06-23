@@ -1,57 +1,60 @@
-<!DoCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            background-color: rgba(128, 235, 27, 0.959);
-            text-align: center;
-            align-items: center;
-            align-content: center;
-            box-sizing: border-box;
-        }
-        table{
-            width: auto;
-            margin: auto;
-            background-color: black;
-            background-image: url(data:image/jpeg;base64,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);
-            border-radius: 15%;
-        }
-        td {
-            border: none;
-            margin: 10px;
-        }
-        input[type='text']{
-            width: 80%;
-            padding: 10px;
-            margin: 20px auto;
-            color: black;
-            background-color: aquamarine;
-        }
-        input[type='button']{
-            border: none;
-            border-bottom: 2px solid red;
-            width: 30px;
-            margin: 2px;
-            background-color: rgb(242, 255, 127);
-        }
-        span{
-            color: rgb(126, 250, 10);
-            opacity: 0.5;
-            font-size: x-small;
-        }
-        #ac{
-           
-            background-color: rgb(9, 121, 250);
-        }
-        ::placeholder{
-            font-size: xx-small;
-        }
-    </style>
-    <title>Simple Calc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <title>Happy Birthday Bro❤</title>
 </head>
 <body>
+    <script src="script.js"></script>
+    <h1>Happy Birthday Bro...</h1>
+    
+    <input type="image" class="open anime" src="https://telegra.ph/file/3f1fe915716403c499983.jpg" width="50" height="50" onclick="add()">
+    <div id="follow-up" class="center">
+        <img src="https://telegra.ph/file/deb0a9a291705438cf888.jpg" alt="">
+        <div class="close top" onclick="play()">
+            <span id="sp">Click Me To view my Wish to You &#9776;</span> 
+            <input type="image" src="https://telegra.ph/file/f168081a8ab4a3181e310.jpg" width="50" height="auto">
+        </div>
+    </div>
+    <div id="contain" class="center anime">
+        <img id="float" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_807327.png" alt="">
+        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem2png.png" alt="" id="cover">
+        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_3.png" alt="" id="float2">
+        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_3.png" alt="" id="float3">
+        <img id="float4" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_807327.png" alt="">
+        <img id="banner" class="center" src="https://telegra.ph/file/312909418b62a7da04516.jpg" alt="">
+        <div id="imagebody" class="center">
+            <img class="center move" id="image" src="https://telegra.ph/file/d39eaa6fdfef06ed39e8f.jpg" alt="Bro❤">
+            <div class="center" id="caption">
+                <p>To my dearest Big Brother, I am so grateful to you for all that you have done for me. 
+                    I wish you the best on your birthday and always.</p>
+            </div>
+        </div>
+        <audio id="audio" src="birthdaysong.mp3"></audio>
+        <div class="center png">
+            <img src="https://telegra.ph/file/ead9d68b9041ea81dda78.jpg" alt="">
+            <img src="https://telegra.ph/file/28ec08689e349034d13e0.jpg" alt="">
+            <img src="https://telegra.ph/file/0f8a2984e664790800d9d.jpg" alt="">
+            <img src="https://telegra.ph/file/b1935e608f708ab5edd48.jpg" alt="">
+            <img src="https://telegra.ph/file/2f372837808c2c93fd1da.jpg" alt="">
+        </div>
+        <p><span style="display: none;" id="remain">
+            Much love from your amiable Brother.</span></p>
+    </div>
+
+<!-- page 2 -->
+<!--  -->
+<!--  -->
+<div id="btn" class="center" style="padding: 7px; margin: 2px; width: fit-content; transition: 3s; opacity: .5;" onclick="prev()">
+    <button>Dispaly Prev Post</button></div>
+<div id="prevpost" style="display: none; ">;
+    <div id="btn2" class="center" style="padding: 7px; margin: 2px; width: fit-content; opacity: .5;" onclick="prev2()">
+        <button>Hide Prev Post</button></div>
+    <h1>Simple Calc</h1>
+<div id="body">
     <h2>Basic Calculator</h2>
 
     <form name="calc" >
@@ -91,9 +94,11 @@
                 <td><input type="button" id="btn" value="=" onclick="calc.display.value=eval(calc.display.value)"></td>
                 <td><input type="button" id="btn" value="+" onclick="calc.display.value+='+'"></td>
             </tr>
-            <tr><td colspan="4"><span>Decryptus.Tech.Inc &reg;</span></td></tr>
+            <tr><td colspan="4"><span id="o">Decryptus.Tech.Inc &reg;</span></td></tr>
         </table>
     </form>
     
+</div>
+</div>
 </body>
 </html>

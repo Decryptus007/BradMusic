@@ -1,255 +1,39 @@
-//controller
-var controller = (function() {
-    var cou = {
-       name: [],
-       flag: [],
-       time: [],
-       capital: [],
-       id: []
-    }
-    var Api = function() {
-          fetch('https://restcountries.eu/rest/v2/all')
-          .then(function(result) {
-             return result.json();
-          })
-          .then(function(data) {
-             for (var i = 0; i < data.length; i++) {
-                cou.flag.push(data[i].flag);
-                cou.name.push(data[i].name);
-                cou.time.push(data[i].timezones[0]);
-                cou.capital.push(data[i].capital);
-                cou.id.push(i);
-             }
-          })
-          .catch(function(error) {
-             alert(error);
-          });
-       };
-    
-    return {
-       list: function(){
-          return Api();
-       },
-       country: function(){
-          return cou;
-       }
-    };
-})();
- 
- 
- // ui controller 
- var UIcontroller = (function() {
-    var DOM = {
-       images1: '.advert',
-       images2: '.advert2',
-       search: '#searchButton',
-       list: '#list',
-       searchBar: '#search',
-       adv: '#adv',
-       container: '.container',
-       text: '.text',
-       altText: '.altText',
-       input: '#input',
-       countryList: '.country-list',
-       text2: '.text2',
-       dot: '#dot',
-       load: '.loader',
-       data: '.data',
-       body: 'body',
-       img: '#img',
-       msg1: '.msg1',
-       msg2: '.msg2',
-       time: '.time',
-       grt: '.greet'
-    };
-    
-    return {
-       getDOM: function() {
-          return DOM;
-       },
-       listClick: function() {
-          var search = document.querySelector(DOM.searchBar);
-          var adv = document.querySelector(DOM.adv);
-          var container = document.querySelector(DOM.container);
-          var text = document.querySelector(DOM.text);
-          var altText = document.querySelector(DOM.altText);
-          var text2 = document.querySelector(DOM.text2);
-          var input = document.querySelector(DOM.input);
-          var data = document.querySelector(DOM.data);
-          var body = document.querySelector(DOM.body);
-          var images1 = document.querySelector(DOM.images1);
-          var images2 = document.querySelector(DOM.images2);
-          var ol = document.querySelector(DOM.countryList);
-          
-          if (adv.style.display === 'none') {
-             ol.innerHTML = '';
-             body.style.backgroundColor = '#232e3f';
-             data.style.display = 'none';
-             adv.style.display = 'block';
-             adv.style.animation = 'fade 2s ease-in-out';
-             search.style.backgroundColor = '#b4d4f8';
-             container.style.color = '#0C070C';
-             text.style.display = 'none';
-             altText.style.display = 'block';
-             text2.style.display = 'none';
-             input.classList.remove('input');
-             input.classList.add('white');
-          } else {
-             adv.style.display = 'none';
-             search.style.backgroundColor = 'inherit';
-             container.style.color = 'inherit';
-             text.style.display = 'block';
-             altText.style.display = 'none';
-             altText.style.color = 'inherit';
-             input.classList.remove('white');
-             input.classList.add('input');
-          }
-       },
-       addCountry: function(name, flag, capital, id) {
-          var ol = document.querySelector(DOM.countryList);
-          var markup = '<li><button id="button-'+ id + '"><span>' + name + '</span><img class="flag" src="' + flag + '"><br/><i>' + capital + '</i></button></li>';
-          ol.insertAdjacentHTML('beforeend', markup);
-       },
-       countryClick: function(id) {
-          var input = document.querySelector(DOM.input);
-          var list = document.querySelector(DOM.list);
-          var search = document.querySelector(DOM.searchBar);
-          var adv = document.querySelector(DOM.adv);
-          var container = document.querySelector(DOM.container);
-          var text2 = document.querySelector(DOM.text2);
-          
-          if (event.target.id.includes(id)) {
-             input.value = event.target.firstChild.textContent;
-             adv.style.display = 'none';
-             search.style.backgroundColor = 'inherit';
-             container.style.color = 'inherit';
-             text2.style.display = 'block';
-             input.classList.remove('white');
-             input.classList.add('input');
-          }
-       },
-       searchClick: function(hour, flag, msg1, msg2, time, msg3) {
-          var load = document.querySelector(DOM.load);
-          var text2 = document.querySelector(DOM.text2);
-          var data = document.querySelector(DOM.data);
-          var body = document.querySelector(DOM.body);
-          var images1 = document.querySelector(DOM.images1);
-          var images2 = document.querySelector(DOM.images2);
-          load.style.display = 'block';
-          var dot = document.querySelectorAll(DOM.dot);
-          var arrDot = Array.prototype.slice.call(dot);
-          var img = document.querySelector(DOM.img);
-          var mssg1 = document.querySelector(DOM.msg1);
-          var mssg2 = document.querySelector(DOM.msg2);
-          var times = document.querySelector(DOM.time);
-          var grt = document.querySelector(DOM.grt);
-          data.style.display = 'none';
-          body.style.backgroundColor = '#232e3f';
-          arrDot.forEach(function(cur, index) {
-             cur.style.animation = 'load 3s -' + index/arrDot.length +'s infinite';
-          });
-          
-          setTimeout(function() {
-             load.style.display = 'none';
-             text2.style.display = 'none';
-             data.style.display = 'block';
-             mssg1.textContent = msg1;
-             mssg2.textContent = msg2;
-             times.textContent = time;
-             grt.textContent = msg3;
-             img.src = flag;
-             if (hour >= 7 && hour <= 18) {
-                body.style.backgroundColor = '#b4d4f8';
-                images1.style.display = 'block';
-             } else if ((hour >= 19 && hour <= 23) || (hour >= 0 && hour <= 6)) {
-                body.style.backgroundColor = '#232e3f';
-                images2.style.display = 'block';
-             }
-             
-          }, 2000)
-       }
-    }
- })();
- 
- 
- // global Controller
- var globalController = (function(ctr, UI) {
-    var setUpEvent = function() {
-       var DOM = UI.getDOM();
-       var data = ctr.country();
-       document.querySelector(DOM.list).addEventListener('click', function() {
-          // change ui 
-          UI.listClick();
-          //display flag and country data 
-          for (var i = 0; i < data.name.length; i++) {
-             UI.addCountry(data.name[i], data.flag[i], data.capital[i], data.id[i]);
-          };
-       });
-       
-       document.querySelector(DOM.search).addEventListener('click', function(){
-          // store input value in a variable
-          var input = document.querySelector(DOM.input).value;
-          var id = data.name.indexOf(input);
-          if (id !== -1) {
-             var flag = data.flag[id];
-             var timearr = data.time[id].split('');
-             var time = parseInt(timearr[5]);
-             var timee = isNaN(time) ? 1 : time;
-             var now = new Date();
-             var hou = now.getUTCHours();
-             var hour = hou + timee >= 13 ? (hou+timee)%12: hou + timee;
-             var mins = now.getUTCMinutes();
-             var minutes = mins <= 9 ? '0'+mins : mins;
-             var date = now.getUTCDate();
-             var mon = now.getUTCMonth();
-             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-             var month = months[mon];
-             var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-             var dayy = now.getUTCDay();
-             var day = days[dayy];
-             var year = now.getUTCFullYear();
-             var AP = hou+timee >= 12 ? 'PM' : 'AM';
-             var mssg1 = 'The Time and Date in ' + input;
-             var mssg2 = day + ' ' + month + ' ' + date + ' ' + year;
-             var mssg3 = hour + ':' + minutes + ' ' + AP;
-             var msg;
-             if (hou+timee < 12) {
-                msg = 'morning';
-             } else if (hou+timee >= 12 && hou+time <= 16) {
-                msg = 'afternoon';
-             } else if (hou+timee > 16 && hou+timee <= 23) {
-                msg = 'evening';
-             } else {
-                msg = 'morning';
-             }
-             var mssg4 = 'Good ' + msg + ' luv, it\'s ' + msg + ' in ' + input + ' currently';
-             var hours = hou + timee;
-             if (input !== '') {
-                UI.searchClick(hours, flag, mssg1, mssg2, mssg3, mssg4);
-             }
-          } else {
-             alert('You\'ve not input a valid country, check the spellings again or you can alternatively select from the dropdown menu below');
-          }
-          
-          
-       });
-       
-       document.querySelector(DOM.adv).addEventListener('click', function(event) {
-          if (event.target.id.includes('button')) {
-             var idi = event.target.id.split('-');
-             var id = parseInt(idi[1]);
-             var flag = '<img class="flag2" src="' + data.flag[id] + '">';
-             UI.countryClick(id);
-          }
-       });
-    };
-    
-    return {
-       init: function() {
-          setUpEvent();
-          ctr.list();
-       }
-    };
- })(controller, UIcontroller);
- 
- globalController.init();
+function play(){
+    var audio = document.getElementById("audio");
+    var splash = document.getElementById("follow-up");
+    var show = document.getElementById('contain');
+    var start = document.querySelector('.close');
+    var end = document.querySelector('.open');
+    var remain = document.getElementById('remain');
+    remain.style.display = "block";
+    end.style.display = "block";
+    splash.style.display = "none";
+    end.style.animationName = "load";
+    end.style.animationDuration = "3s";
+    end.style.animationPlayState = "ease-in-out";
+    show.style.animationName = "load";
+    show.style.animationDuration = "3s";
+    show.style.animationPlayState = "ease-in-out";
+    show.style.display = "block";
+    start.style.display = "none";
+    audio.play();
+};
+
+function add(){
+    alert("Rock on it's your day");
+};
+function prev(){
+    var old = document.querySelector('#prevpost');
+    old.style.animationName = "load";
+    old.style.animationDuration = "3s";
+    old.style.animationPlayState = "ease-in-out";
+    old.style.display = "block";
+    document.getElementById('btn').style.display = "none";
+    document.getElementById('btn2').style.display = "block";
+};
+function prev2(){
+    var old = document.querySelector('#prevpost');
+    old.style.display = "none";
+    document.getElementById('btn').style.display = "block";
+    document.getElementById('btn2').style.display = "none";
+};
