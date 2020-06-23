@@ -203,7 +203,7 @@ h1{
     background-color: #8b12a3;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: inset 5px 4px 8px #3c0b4480, 5px 5px 8px #3c0b449d;
+    box-shadow: inset 5px 4px 8px #3c0b449d, 5px 5px 8px #cc970580;
 }
 @keyframes load{
     from{
