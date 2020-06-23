@@ -248,10 +248,11 @@ h1{
     padding: 2px;
     background-color: #d741f57a;
     border-radius: 20% 20% 0 0;
+    box-shadow: 3px 3px 8px black;
 }
 .png{
     display: inline-block;
-    margin-top: -30px;   
+    margin-top: 10px;   
 }
 .png img{
     margin-right: 4px;

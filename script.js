@@ -37,3 +37,25 @@ function prev2(){
     document.getElementById('btn').style.display = "block";
     document.getElementById('btn2').style.display = "none";
 };
+function fo(){
+    var b1 = document.getElementById('showg');
+    var b2 = document.getElementById('showge');
+    var ctrl = document.getElementById('ctrl');
+    b1.style.display = "none";
+    b2.style.display = "block";
+    ctrl.style.animationName = "load";
+    ctrl.style.animationDuration = "3s";
+    ctrl.style.animationPlayState = "ease-in";
+    ctrl.style.display = "block";
+};
+function fod(){
+    var b1 = document.getElementById('showg');
+    var b2 = document.getElementById('showge');
+    var ctrl = document.getElementById('ctrl');
+    b1.style.display = "block";
+    b2.style.display = "none";
+    ctrl.style.animationName = "load";
+    ctrl.style.animationDuration = "3s";
+    ctrl.style.animationPlayState = "ease-in";
+    ctrl.style.display = "none";
+};
