@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css">
     <title>Happy Birthday Bro❤</title>
 </head>
 <body>
@@ -98,60 +97,5 @@
             Much love from your amiable Brother.</span></p>
     </div>
 
-<!-- page 2 -->
-<!--  -->
-<!--  -->
-<div id="btn" class="center" style="padding: 7px; margin: 2px; width: fit-content; transition: 3s; opacity: .5;" onclick="prev()">
-    <button>Dispaly Prev Post</button></div>
-<div id="prevpost" style="display: none; ">;
-    <div id="btn2" class="center" style="padding: 7px; margin: 2px; width: fit-content; opacity: .5;" onclick="prev2()">
-        <button>Hide Prev Post</button></div>
-    <h1>Simple Calc</h1>
-<div id="body">
-    <h2>Basic Calculator</h2>
-
-    <form name="calc" >
-        <table border="2">
-            <tr>
-                <td colspan="4"><input type="text" name="display" id="btn" disabled placeholder="To clear all double-tap on AC"></td>
-            </tr>
-            </tr>
-            <tr>
-                <td><input type="button" id="btn" value="9" onclick="calc.display.value+='9'"></td>
-                <td><input type="button" id="btn" value="8" onclick="calc.display.value+='8'"></td>
-                <td><input type="button" id="btn" value="7" onclick="calc.display.value+='7'"></td>
-                <td><input type="button" id="ac" value="AC" onclick="calc.display.value=calc.display.value.substr(0, calc.display.value.length-1)" 
-                    ondblclick="calc.display.value=''"></td>             
-            </tr>
-            <tr>
-                <td><input type="button" id="btn" value="6" onclick="calc.display.value+='6'"></td>
-                <td><input type="button" id="btn" value="5" onclick="calc.display.value+='5'"></td>
-                <td><input type="button" id="btn" value="4" onclick="calc.display.value+='4'"></td>
-                <td><input type="button" id="btn" value="÷" onclick="calc.display.value+='/'"></td>
-            </tr>
-            <tr>
-                <td><input type="button" id="btn" value="3" onclick="calc.display.value+='3'"></td>
-                <td><input type="button" id="btn" value="2" onclick="calc.display.value+='2'"></td>
-                <td><input type="button" id="btn" value="1" onclick="calc.display.value+='1'"></td>
-                <td><input type="button" id="btn" value="x" onclick="calc.display.value+='*'"></td>
-            </tr>
-            <tr>
-                <td><input type="button" id="btn" value="." onclick="calc.display.value+='.'"></td>
-                <td><input type="button" id="btn" value="0" onclick="calc.display.value+='0'"></td>
-                <td><input type="button" id="btn" value="%" onclick="calc.display.value=(calc.display.value/100)"></td>
-                <td><input type="button" id="btn" value="-" onclick="calc.display.value+='-'"></td>
-            </tr>
-            <tr>
-                <td><input id="btn" type=button value="^2" onclick="calc.display.value=Math.pow(calc.display.value,2)"></td>
-                <td><input id="btn" type=button value="1/x" onclick="calc.display.value=1/calc.display.value"></td>
-                <td><input type="button" id="btn" value="=" onclick="calc.display.value=eval(calc.display.value)"></td>
-                <td><input type="button" id="btn" value="+" onclick="calc.display.value+='+'"></td>
-            </tr>
-            <tr><td colspan="4"><span id="o">Decryptus.Tech.Inc &reg;</span></td></tr>
-        </table>
-    </form>
-    
-</div>
-</div>
 </body>
 </html>
