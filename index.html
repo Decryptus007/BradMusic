@@ -3,99 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Happy Birthday Bro❤</title>
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js"></script>
 </head>
 <body>
-    <script src="script.js"></script>
-    <h1>Happy Birthday Bro...</h1>
-    
-    <input type="image" class="open anime" src="https://telegra.ph/file/3f1fe915716403c499983.jpg" width="50" height="50" onclick="add()">
-    <div id="follow-up" class="center">
-        <img src="https://telegra.ph/file/deb0a9a291705438cf888.jpg" alt="">
-        <div class="close top" onclick="play()">
-            <span id="sp">Click Me To view my Wish to You &#9776;</span> 
-            <input type="image" src="https://telegra.ph/file/f168081a8ab4a3181e310.jpg" width="50" height="auto">
-        </div>
+    <div class="wraptitle">
+        <h2 class="title">MineSweeper💣💥<sup style="font-style: oblique; color: aliceblue; font-size: x-small;">lite</sup></h2><sub class="sub"> with vanilla JS</sub>
     </div>
-    <div id="contain" class="center anime">
-        <img id="float" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_807327.png" alt="">
-        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem2png.png" alt="" id="cover">
-        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_3.png" alt="" id="float2">
-        <img src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_3.png" alt="" id="float3">
-        <img id="float4" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/PngItem_807327.png" alt="">
-        <img id="banner" class="center" src="https://telegra.ph/file/312909418b62a7da04516.jpg" alt="">
-        <div id="imagebody" class="center">
-            <img class="center move" id="image" src="https://telegra.ph/file/d39eaa6fdfef06ed39e8f.jpg" alt="Bro❤">
-            <div class="center" id="caption">
-                <p>To my dearest Big Brother, I am so grateful to you for all that you have done for me. 
-                    I wish you the best on your birthday and always.</p>
-            </div>
-        </div>
-        <audio id="audio" src="birthdaysong.mp3"></audio>
-        <div id="wishes">
-            <h2 style="font-size: medium; margin: 1px 10px 15px; padding: 15px; background-color: rgba(17, 57, 236, 0.788);">From Others with Love💟 <br>
-            <span style="font-size: small;">Click the Arrow to view.</span></h2>
-            <input id="showg" onclick="fo()" type="image" style="margin: 0 auto; padding: 10px; background-color: #00ffff48;" width="30" height="30" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/pinpng.com-hand-drawn-arrow-png-302220.png" alt="">
-            <input id="showge" onclick="fod()" type="image" style="margin: 0 auto; display: none; padding: 10px; background-color: #00ffff48;" width="30" height="30" src="https://raw.githubusercontent.com/Decryptus007/My-Projects/master/pngfind.com-angle-wings-png-6273703.png" alt="">
-            <div id="ctrl" style="display: none;">
-                <div id="wishes1" style="padding: 5px; box-shadow: 3px 3px 5px #111111a4; margin: 10px; background-color: #892be25e;">
-                    <p style="text-indent: 30px; font-style: italic;">Happy Birthday Brother Shola, God will continue to bless you, 
-                        God will give you Long life and Prosperity. Amen.<br>
-                        <span id="disabled" style="text-decoration: line-through;">Bro. help me to buy keke</span>
-                        <br><span id="g1">🖊...<b>Gabe</b></span>
-                    </p>
-                </div>
-                <div id="wishes2" style="padding: 5px; box-shadow: 3px 3px 5px #111111a4; margin: 10px; background-color: #e90a0aa9;">
-                    <p style="text-indent: 30px; font-style: italic;">Happy Birthday Brother Shola, God will give you Long life and Prosperity,
-                        you will have promotion in your Job. Amen.<br>
-                        <span id="disabled" style="text-decoration: line-through;">Bro. help me to buy keke</span>
-                        <br><span id="g1">🖊...<b>Mikolo</b></span>
-                    </p>
-                </div>
-                <div id="wishes3" style="padding: 5px; box-shadow: 3px 3px 5px #111111a4; margin: 10px; background-color: #f70e54b7;">
-                    <p style="text-decoration: underline; text-indent: 30px; font-style: italic;">Eku ojo ibi boda mi owon.
-                         E ma fi inudidun pelu ayo, ola ati
-                        alafia lo aye yin, ema kole mole ema rale mole gbogbo
-                        odun ti e ba lo laye inudidun le fi ma lo. Amin.<br>
-                        <span id="g1">🖊...<b>Fisayo</b></span>
-                    </p>
-                </div>
-                <div id="wishes4" style="padding: 5px; box-shadow: 3px 3px 5px #111111a4; margin: 10px; background-color: #f70e54b7;">
-                    <p style="text-indent: 30px; font-style: italic;">Today is a wonderful day of yours, wishing you many more happy in returns.
-                        Age with Grace, long life and prosperity. 
-                        <br> Happy Birthday Bro.<br>
-                        <span id="g1">🖊...<b>Feranmi</b></span>
-                    </p>
-                </div>
-                <div id="wishes5" style="padding: 5px; box-shadow: 3px 3px 5px #111111a4; margin: 10px; background-color: #f79a0eb7;">
-                    <p style="text-indent: 30px; font-style: italic;">First &amp; Foremost, we give <span style="text-decoration: underline;">tnx</span>
-                        to <span style="text-decoration: underline;">d</span> author &amp; 
-                        finisher of our faith who kept <span style="text-decoration: underline;">u</span>
-                        since birth till date without paying him any bills, blessed be 
-                        <span style="text-decoration: underline;">ur</span> holy name Father.<br>
-                        Thousands of epistle isn't enough for me to wish you a happy birthday big bro
-                        but permit me to say, this joyous day of
-                         <span style="text-decoration: underline;">urs</span> will be the beginning of breakthrough
-                         for <span style="text-decoration: underline;">u</span> IJN. <br>
-                         You're not just a brother to me but <span style="text-decoration: underline;">u</span>
-                         mean alot to me. Love <span style="text-decoration: underline;">u</span> big bro.
-                         Continue ageing in abundant grace. HIP! HIP!! HIP!!! HURRAY!!!!! <br>
-                        <span id="g1">🖊...<b>Temi</b></span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="center png">
-            <img src="https://telegra.ph/file/ead9d68b9041ea81dda78.jpg" alt="">
-            <img src="https://telegra.ph/file/28ec08689e349034d13e0.jpg" alt="">
-            <img src="https://telegra.ph/file/0f8a2984e664790800d9d.jpg" alt="">
-            <img src="https://telegra.ph/file/b1935e608f708ab5edd48.jpg" alt="">
-            <img src="https://telegra.ph/file/2f372837808c2c93fd1da.jpg" alt="">
-        </div>
-        <p><span style="display: none;" id="remain">
-            Much love from your amiable Brother.</span></p>
+    <h2 class="hint" style="color: wheat; cursor: pointer;">Gameplay 🔽</h2>
+    <div class="ins" style="padding: 20px; line-height: 30px; font-weight: 100; font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <p>There are essentially five actions you can take in Minesweeper:
+         
+            Open a square. This is done simply by left clicking on a square.
+            Marking a square as a mine. This is done by right clicking on a square. A little mine icon will show up there.
+            Clear any marks. Again, right click on the square. Right clicking cycles through the following states: Bomb, Clear.
+            Opening all remaining adjacent squares to a number square. If for example you have a square with the number 1 and you have already marked one mine in one of the adjacent squares you can left click on the 1 square and the remaining adjacent squares will all be opened. This can save a lot of time while trying to quickly clear out squares. If you press on a number where not all adjacent mines have been marked, e.g. the number is 3 and you've only flagged one adjacent square, then the squares will not be opened, to prevent you from accidentally clicking on a number and blowing yourself up! In the old Windows version of this game you used both mouse buttons together to perform this action, but here we just use a normal left-click.
+        </p>
+        <span style="float: right; font-weight: 50;">Cc: <a href="https://cardgames.io/minesweeper/#play">CardGames.io</a></span>
     </div>
-
+    <div class="grid"></div>
+    <div class="info">
+        <h3>Flags Left: <span id="flagsLeft">5</span></h3>
+        <h1 id="win"></h1>
+    </div>
+    <div class="line"></div>
+    <!-- Footer -->
+    <div class="footer">
+        <h4>Challenge by<a href="https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw" class="master" target="_blank"> Ana Kubow</a></h4>
+        <h5>Coded by<a href="#" class="master" target="_blank"> Dominic</a></h5>
+    </div>
 </body>
 </html>
