@@ -8,6 +8,7 @@ const progress = document.querySelector('.progress')
 const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
+const spk = document.querySelector('.speaker')
 
 // Song titles
 const songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever', 'ThisYourBody', 'pastLives', 'Kina', 'CloudyDay']
@@ -43,7 +44,6 @@ function pauseSong() {
 
     audio.pause()
 }
-
 
 function prevSong() {
     songIndex--
