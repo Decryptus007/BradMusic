@@ -30,6 +30,13 @@ body {
     z-index: 10;
 }
 
+/* Media queries for 450px below */
+@media (max-width: 450px) {
+    .music-container {
+        max-width: 90vw;
+    }
+}
+
 .img-container {
     position: relative;
     width: 110px;
