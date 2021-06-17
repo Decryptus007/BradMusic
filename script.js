@@ -10,7 +10,7 @@ const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
 
 // Song titles
-const songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock']
+const songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever']
 
 // Keep track of songs
 let songIndex = 0
@@ -40,6 +40,7 @@ function pauseSong() {
     playBtn.querySelector('i.fas').classList.remove('fa-pause')
 
     audio.pause()
+
 }
 
 function prevSong() {
