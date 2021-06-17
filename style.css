@@ -30,12 +30,35 @@ body {
     z-index: 10;
 }
 
-/* Media queries for 450px below */
-/* @media (max-width: 450px) {
-    .music-container {
-        max-width: 90vw;
+.speaker {
+    position: absolute;
+    left: calc(100% - 80vw);
+    top: 20vh;
+}
+
+.speaker img{
+    width: 85%;
+    /* left: 38vw; */
+    animation: bass 1.2s ease-in-out infinite;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity ease 1s;
+}
+
+.speaker.play img{
+    animation-play-state: running;
+    opacity: 0.3;
+}
+
+@keyframes bass {
+    from {
+        transform: scale(1.0);
     }
-} */
+
+    to {
+        transform: scale(0.7);
+    }
+}
 
 .img-container {
     position: relative;
