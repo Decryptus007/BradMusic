@@ -27,6 +27,7 @@ function loadSong(song) {
 }
 
 function playSong() {
+    spk.classList.add('play')
     musicContainer.classList.add('play')
     playBtn.querySelector('i.fas').classList.remove('fa-play')
     playBtn.querySelector('i.fas').classList.add('fa-pause')
@@ -35,13 +36,14 @@ function playSong() {
 }
 
 function pauseSong() {
+    spk.classList.remove('play')
     musicContainer.classList.remove('play')
     playBtn.querySelector('i.fas').classList.add('fa-play')
     playBtn.querySelector('i.fas').classList.remove('fa-pause')
 
     audio.pause()
-
 }
+
 
 function prevSong() {
     songIndex--
