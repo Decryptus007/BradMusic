@@ -14,7 +14,7 @@ const news = document.querySelector('.uyScuti')
 const txt = document.querySelector('.text')
 
 // Song titles
-let songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever', 'ThisYourBody', 'pastLives', 'Kina', 'CloudyDay']
+let songs = ['Bounce', 'Ameno' ,'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever', 'ThisYourBody', 'pastLives', 'Kina', 'CloudyDay']
 
 let uy = ['CupOfTea', 'Jailer', 'Julie', 'NeedForSpeed', 'Rock', 'PonPon', 'RoughUp', 'Somebody', 'SoMuchMore', 'Want']
 
