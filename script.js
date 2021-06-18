@@ -9,17 +9,24 @@ const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
 const spk = document.querySelector('.speaker')
+const old = document.querySelector('.classic')
+const news = document.querySelector('.uyScuti')
+const txt = document.querySelector('.text')
 
 // Song titles
-const songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever', 'ThisYourBody', 'pastLives', 'Kina', 'CloudyDay']
+let songs = ['Bounce', 'CashApp', 'Feeling', 'InTheEnd', 'Rock', 'Forever', 'ThisYourBody', 'pastLives', 'Kina', 'CloudyDay']
+
+let uy = ['CupOfTea', 'Jailer', 'Julie', 'NeedForSpeed', 'Rock', 'PonPon', 'RoughUp', 'Somebody', 'SoMuchMore', 'Want']
 
 // Keep track of songs
 let songIndex = 0
 
-// Initiall load song into DOM
-loadSong(songs[songIndex])
+// Initially load song into DOM
+let defau = songs
+loadSong(defau[songIndex])
 
 // Update song details
+
 function loadSong(song) {
     index.innerText = `${songIndex + 1} of ${songs.length}`
     title.innerText = song
@@ -27,8 +34,30 @@ function loadSong(song) {
     cover.src = `./images/${song}.jpg`
 }
 
+function port2() {
+    defau = []
+
+    for (let k = 0; k < uy.length; k++) {
+        defau.push(uy[k])
+    }
+
+    news.classList.add('pop')
+    old.classList.remove('pop')
+
+    loadSong(defau[songIndex])
+    playSong()
+}
+
+function port() {
+    news.classList.remove('pop')
+    old.classList.add('pop')
+
+    loadSong(songs[songIndex])
+    playSong()
+}
+
 function playSong() {
-    spk.classList.add('play')
+    spk.classList.add('st', 'play')
     musicContainer.classList.add('play')
     playBtn.querySelector('i.fas').classList.remove('fa-play')
     playBtn.querySelector('i.fas').classList.add('fa-pause')
@@ -95,6 +124,9 @@ playBtn.addEventListener('click', () => {
 })
 
 // Change song events
+old.addEventListener('click', port)
+news.addEventListener('click', port2)
+
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
 
