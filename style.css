@@ -19,6 +19,38 @@ body {
     justify-content: center;
 }
 
+.classic, .uyScuti {
+    background-color: #9cd80fb0;
+    padding: 4px 8px;
+    border-radius: 5%;
+    box-shadow: 4px 4px 6px #000000a8;
+    transition: box-shadow 0.5s linear;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.classic.pop, .uyScuti.pop {
+    display: none;
+}
+
+.classic:hover, .uyScuti:hover {
+    box-shadow: none;
+}
+
+.stream p .sup {
+    color: #065e48;
+    animation: pop 1s linear infinite;
+}
+
+@keyframes pop {
+    from{
+        font-size: medium;
+    }
+    to {
+        font-size: small;
+    }
+}
+
 .music-container {
     background-color: #fff;
     border-radius: 5%;
@@ -45,9 +77,13 @@ body {
     transition: opacity ease 1s;
 }
 
+.speaker.st img{
+   opacity: 0.3;
+}
+
 .speaker.play img{
     animation-play-state: running;
-    opacity: 0.3;
+    
 }
 
 @keyframes bass {
