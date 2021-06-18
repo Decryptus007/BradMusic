@@ -40,7 +40,6 @@ function port2() {
     for (let k = 0; k < uy.length; k++) {
         defau.push(uy[k])
     }
-
     news.classList.add('pop')
     old.classList.remove('pop')
 
@@ -49,10 +48,11 @@ function port2() {
 }
 
 function port() {
+    defau = songs
     news.classList.remove('pop')
     old.classList.add('pop')
 
-    loadSong(songs[songIndex])
+    loadSong(defau[songIndex])
     playSong()
 }
 
@@ -81,7 +81,7 @@ function prevSong() {
         songIndex = songs.length - 1
     }
 
-    loadSong(songs[songIndex])
+    loadSong(defau[songIndex])
 
     playSong()
 }
@@ -93,7 +93,7 @@ function nextSong() {
         songIndex = 0
     }
 
-    loadSong(songs[songIndex])
+    loadSong(defau[songIndex])
 
     playSong()
 }
