@@ -28,7 +28,7 @@ loadSong(defau[songIndex])
 // Update song details
 
 function loadSong(song) {
-    index.innerText = `${songIndex + 1} of ${songs.length}`
+    index.innerText = `${songIndex + 1} of ${defau.length}`
     title.innerText = song
     audio.src = `./music/${song}.mp3`
     cover.src = `./images/${song}.jpg`
