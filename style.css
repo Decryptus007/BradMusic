@@ -39,7 +39,7 @@ body {
 
 .stream p .sup {
     color: #065e48;
-    animation: pop 1s linear infinite;
+    animation: pop 1s linear 3;
 }
 
 @keyframes pop {
